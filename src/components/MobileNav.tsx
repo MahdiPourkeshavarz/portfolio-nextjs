@@ -37,14 +37,14 @@ export function MobileNav() {
           <CiMenuFries className="text-[32px] text-accent" />
         </SheetTrigger>
         <SheetContent className="flex flex-col">
-          <div className="text-slate-800 mt-32 mb-40 text-center text-xl">
+          <div className="text-slate-100 mt-32 mb-40 text-center text-xl">
             <Link href={"/"}>
               <h2>
                 Mahdi <span className="text-accent">.</span>
               </h2>
             </Link>
           </div>
-          <nav className='flex flex-col justify-center items-center gap-8'>
+          <nav className="flex flex-col justify-center items-center gap-8">
             {links.map((link, index) => {
               return (
                 <Link
