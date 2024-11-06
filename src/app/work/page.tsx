@@ -3,18 +3,11 @@
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { BsArrowUpRight, BsGithub } from "react-icons/bs";
+import { BsGithub } from "react-icons/bs";
 
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-
-import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { Swiper as SwiperType } from "swiper/types";
 
 const projects = [
   {
@@ -29,7 +22,7 @@ const projects = [
       { name: "Tailwindcss" },
       { name: "Mui" },
     ],
-    image: "/assets/work/thumb1.png",
+    image: "/assets/work/react-quiz.png",
     live: "#",
     github: "https://github.com/MahdiPourkeshavarz/interview-test-react",
   },
@@ -46,7 +39,7 @@ const projects = [
       { name: "Tailwindcss" },
       { name: "Mui" },
     ],
-    image: "/assets/work/thumb2.png",
+    image: "/assets/work/react-gadgethub.png",
     live: "#",
     github: "https://github.com/MahdiPourkeshavarz/react-ts-final-project",
   },
@@ -62,7 +55,7 @@ const projects = [
       { name: "css" },
       { name: "leaflet-geoman" },
     ],
-    image: "/assets/work/thumb3.png",
+    image: "/assets/work/react-geomahdi.png",
     live: "#",
     github: "https://github.com/MahdiPourkeshavarz/geomahdi",
   },
@@ -70,106 +63,81 @@ const projects = [
 
 export default function Work() {
   const [project, setProject] = useState(projects[0]);
-  function handleSlideChange(swiper) {
+  function handleSlideChange(swiper: SwiperType) {
     const currentIndex = Number(swiper.activeIndex);
 
     setProject(projects[currentIndex]);
   }
   return (
     <>
-      <motion.div
+      <motion.section
         initial={{ opacity: 0 }}
         animate={{
           opacity: 1,
           transition: { delay: 1.4, duration: 0.4, ease: "easeIn" },
         }}
-        className="min-h-[60vh] flex flex-col justify-center py-6"
+        className="min-h-[80vh] py-6 bg-primary"
       >
-        <div className="container mx-auto">
-          <div className="flex flex-col lg:flex-row lg:gap-[200px]">
-            <div className="w-full lg:w-[50%] xl:h-[460px] flex flex-col lg:justify-between order-2 lg:order-none">
-              <div className="flex flex-col gap-8 h-[50%]">
-                <div className="text-6xl leading-none font-bold text-transparent text-outline">
-                  {project?.num}
-                </div>
-                <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
-                  {project?.category} project
-                </h2>
-                <p className="text-white/60">{project?.description}</p>
-                <ul className="flex flex-row gap-4">
-                  {project?.techs?.map((tech, index) => {
-                    return (
-                      <li className="text-xl text-accent" key={index}>
-                        {tech?.name}
-                        {index !== project?.techs?.length - 1 && ","}
-                      </li>
-                    );
-                  })}
-                </ul>
-                <div className="border border-white/20"></div>
-                <div className="flex flex-row gap-6 items-center">
-                  {project?.github && (
-                    <Link href={project.github}>
-                      <TooltipProvider delayDuration={100}>
-                        <Tooltip>
-                          <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                            <BsGithub className="text-white text-3xl group-hover:text-accent" />
-                          </TooltipTrigger>
-                          <TooltipContent>
-                            <p>Github</p>
-                          </TooltipContent>
-                        </Tooltip>
-                      </TooltipProvider>
-                    </Link>
-                  )}
-
-                  {project?.live && project.live !== "" && (
-                    <Link href={project.live}>
-                      <TooltipProvider delayDuration={100}>
-                        <Tooltip>
-                          <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                            <BsArrowUpRight className="text-white text-3xl group-hover:text-accent" />
-                          </TooltipTrigger>
-                          <TooltipContent>
-                            <p>Live demo</p>
-                          </TooltipContent>
-                        </Tooltip>
-                      </TooltipProvider>
-                    </Link>
-                  )}
-                </div>
-              </div>
-            </div>
-            <div className="w-full lg:w-[60%]">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="sm:order-1">
               <Swiper
                 spaceBetween={30}
                 slidesPerView={1}
-                className="lg:h-[540px] mb-12"
                 onSlideChange={handleSlideChange}
+                className="swiper-container"
               >
-                {projects.map((project, index) => {
-                  return (
-                    <SwiperSlide key={index} className="w-full">
-                      <div className="h-[440px] relative group flex justify-center items-center md:w-[560px] sm:h-[355px]">
-                        <div className="absolute top-0 w-full h-full z-10"></div>
-                        <div className="relative w-full h-full">
-                          <Image
-                            src={project.image}
-                            alt="_"
-                            className="object-cover"
-                            width={560}
-                            height={480}
-                          />
-                        </div>
-                      </div>
-                    </SwiperSlide>
-                  );
-                })}
+                {projects.map((p, index) => (
+                  <SwiperSlide key={index} className="relative">
+                    <Image
+                      src={p.image}
+                      alt={p.title}
+                      objectFit="cover"
+                      layout="responsive"
+                      className="rounded-lg shadow-lg"
+                      width={560}
+                      height={480}
+                    />
+                  </SwiperSlide>
+                ))}
               </Swiper>
+            </div>
+            <div className="sm:order-2">
+              <div className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-dark mb-4">
+                {project?.num}
+              </div>
+              <h2 className="text-4xl font-bold text-white mb-2 capitalize">
+                {project?.title} Project
+              </h2>
+              <p className="text-lg text-white/70 mb-6">
+                {project?.description}
+              </p>
+              <ul className="flex flex-wrap gap-4 mb-6">
+                {project?.techs?.map((tech) => (
+                  <li
+                    key={tech.name}
+                    className="bg-white/10 px-4 py-2 rounded text-accent"
+                  >
+                    {tech.name}
+                  </li>
+                ))}
+              </ul>
+              <div className="flex gap-4">
+                {project?.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-white/10 hover:bg-white/20 px-6 py-3 rounded text-accent flex items-center gap-2"
+                  >
+                    <BsGithub className="text-xl" /> Github
+                  </a>
+                )}
+              </div>
             </div>
           </div>
         </div>
-      </motion.div>
+      </motion.section>
     </>
   );
 }
