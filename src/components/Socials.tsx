@@ -1,4 +1,3 @@
-import { Icon } from "@radix-ui/react-select";
 import Link from "next/link";
 import { FaGithub, FaLinkedin, FaYoutube, FaTwitter } from "react-icons/fa";
 
@@ -21,7 +20,12 @@ const socials = [
   },
 ];
 
-export function Socials({ containerStyles, iconStyles }) {
+interface props {
+  containerStyles: string;
+  iconStyles: string;
+}
+
+export function Socials({ containerStyles, iconStyles }: props) {
   return (
     <>
       <div className={containerStyles}>
