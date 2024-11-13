@@ -24,12 +24,12 @@ export function Photo() {
             }}
           >
             <Image
-              src="/photo.png"
+              src="/my-photo.png"
               priority
               quality={100}
               fill
               alt="mahdi"
-              className="object-contain"
+              className="object-contain rounded-full pb-1"
             />
           </motion.div>
           <motion.svg
