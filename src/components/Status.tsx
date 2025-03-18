@@ -3,19 +3,19 @@ import CountUp from "react-countup";
 
 const stats = [
   {
-    num: 1,
+    num: 2,
     text: "Years of Experience",
   },
   {
-    num: 5,
+    num: 10,
     text: "Projects Completed",
   },
   {
-    num: 8,
+    num: 9,
     text: "Technologies Mastered",
   },
   {
-    num: 300,
+    num: 450,
     text: "Code Commits",
   },
 ];
