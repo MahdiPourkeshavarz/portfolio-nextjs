@@ -6,7 +6,7 @@ export async function GET() {
   const filePath = path.join(
     process.cwd(),
     "public",
-    "Mahdi-pourkeshavarz-resume.pdf"
+    "Mahdi-Pourkeshavarz-Resume.pdf"
   );
 
   if (!fs.existsSync(filePath)) {

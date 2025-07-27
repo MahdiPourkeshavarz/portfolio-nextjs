@@ -1,13 +1,13 @@
 "use client";
+import { FaJs, FaReact, FaFigma, FaNodeJs } from "react-icons/fa";
 import {
-  FaHtml5,
-  FaCss3,
-  FaJs,
-  FaReact,
-  FaFigma,
-  FaNodeJs,
-} from "react-icons/fa";
-import { SiTailwindcss, SiNextdotjs, SiMaterialdesign } from "react-icons/si";
+  SiTailwindcss,
+  SiNextdotjs,
+  SiMaterialdesign,
+  SiTypescript,
+  SiNestjs,
+  SiMongodb,
+} from "react-icons/si";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
@@ -22,7 +22,7 @@ import { motion } from "framer-motion";
 const about = {
   title: "About Me",
   description:
-    "I like the satisfaction of a working piece of code. Eager to learn new things, I always have a course or two bookmarked on my browser.",
+    "A result-driven developer with a unique background spanning 4+ years in AI data management and 2+ years in full-stack web development",
   info: [
     {
       fieldName: "Name",
@@ -55,17 +55,22 @@ const experience = {
   icon: "/assets/resume/cap.svg",
   title: "My Expreience",
   description:
-    "Being a team player is one of the many skills I have achieved after working with many developers at my firm",
+    "Proven ability to lead technical teams, having managed over 20 specialist in more than 30 complex AI projects.",
   items: [
     {
       company: "Horizon",
+      position: "Software Test Specialist",
+      duration: "2025 - present",
+    },
+    {
+      company: "Horizon",
       position: "Front-End Developer",
-      duration: "2024 - present",
+      duration: "2023 - 2025",
     },
     {
       company: "Horizon",
       position: "Data Annotator",
-      duration: "2018 - 2024",
+      duration: "2018 - 2023",
     },
   ],
 };
@@ -100,14 +105,6 @@ const skills = {
     "This is the list of all related skill in the Web Development world",
   skillList: [
     {
-      icon: <FaHtml5 />,
-      name: "HTML 5",
-    },
-    {
-      icon: <FaCss3 />,
-      name: "Cascading Style Sheet(css) 3",
-    },
-    {
       icon: <FaJs />,
       name: "Javascript ES6",
     },
@@ -125,6 +122,14 @@ const skills = {
       name: "Next js",
     },
     {
+      icon: <SiTypescript />,
+      name: "Typescript",
+    },
+    {
+      icon: <SiNestjs />,
+      name: "Nest Js",
+    },
+    {
       icon: <FaFigma />,
       name: "Figma",
     },
@@ -136,6 +141,10 @@ const skills = {
     {
       icon: <SiMaterialdesign />,
       name: "Material Ui",
+    },
+    {
+      icon: <SiMongodb />,
+      name: "Mongo Db",
     },
   ],
 };

@@ -19,6 +19,13 @@ const services = [
       "Worked as an Annotator and team lead at my firm for more than five years. Im happy to say i have worked more AI projects that anyone in my firm and I value the most each project I have worked",
     href: "",
   },
+  {
+    num: "03",
+    title: "Software Tester",
+    description:
+      "Spearheaded the establishment of the company's first formal QA team, also developed and implemented comprehensive testing methodologies and created all necessary project documentation.",
+    href: "",
+  },
 ];
 
 export default function Services() {
