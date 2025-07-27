@@ -30,7 +30,7 @@ const info = [
   {
     icon: <FaMapMarkerAlt />,
     title: "Address",
-    description: "Tehran, Chahardangeh",
+    description: "Oman, Masqat",
   },
 ];
 

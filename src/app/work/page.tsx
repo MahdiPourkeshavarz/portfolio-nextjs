@@ -12,14 +12,83 @@ import { Swiper as SwiperType } from "swiper/types";
 const projects = [
   {
     num: "01",
+    category: "full-stack",
+    title: "DishDash - Geo-Social Food App (Frontend)",
+    description:
+      "Engineered a dynamic and responsive Progressive Web App (PWA) using Next.js, TypeScript, and Tailwind CSS. Architected a robust client-side application featuring an interactive map UI with React-Leaflet, live POI data from OpenStreetMap, and dynamic post clustering. Managed global state with Zustand and implemented efficient server-state caching and synchronization with TanStack Query. The app includes a complete authentication flow using NextAuth.js, with a custom, Zod-validated modal for both credentials and Google OAuth.",
+    techs: [
+      { name: "Next.js" },
+      { name: "React-Leaflet" },
+      { name: "Zustand" },
+      { name: "Tailwind CSS" },
+      { name: "TanStack Query" },
+      { name: "Framer Motion" },
+    ],
+    image: "/assets/work/dishdash.png",
+    live: "#",
+    github: "https://github.com/MahdiPourkeshavarz/dishdash",
+  },
+  {
+    num: "02",
+    category: "back-end",
+    title: "DishDash API",
+    description:
+      "Developed a secure, scalable, and modular backend API using NestJS and TypeScript. Designed a complete JWT-based authentication system with Passport.js and secure password hashing. Architected distinct, feature-based modules for managing users, posts, image uploads, and social interactions (wishlists, likes). Utilized TypeORM with a MongoDB Atlas database for data persistence and created a full suite of RESTful endpoints with DTO-based validation.",
+    techs: [
+      { name: "NestJS" },
+      { name: "TypeScript" },
+      { name: "MongoDB" },
+      { name: "TypeORM" },
+      { name: "Passport.js" },
+      { name: "JWT" },
+    ],
+    image: "/assets/work/dishdash.png",
+    live: "#",
+    github: "https://github.com/MahdiPourkeshavarz/dishdash-api",
+  },
+  {
+    num: "03",
+    category: "front-end",
+    title: "GadgetHub (Frontend)",
+    description:
+      "Built a complete e-commerce storefront with React and TypeScript, featuring product Browse, a shopping cart, and a user profile section. Integrated an administrative panel for managing products and orders. Utilized TanStack Query for efficient data fetching and caching from a custom backend API.",
+    techs: [
+      { name: "React" },
+      { name: "React Router" },
+      { name: "TanStack Query" },
+      { name: "Tailwind CSS" },
+    ],
+    image: "/assets/work/react-gadgethub.png",
+    live: "#",
+    github: "https://github.com/MahdiPourkeshavarz/react-ts-final-project",
+  },
+  {
+    num: "04",
+    category: "back-end",
+    title: "GadgetHub API",
+    description:
+      "Engineered the backend for a full-featured e-commerce platform using NestJS, TypeScript, and Mongoose with a MongoDB database. Developed a comprehensive RESTful API with endpoints for secure user authentication (JWT), complete CRUD operations for products, order processing, and dedicated routes for an administrative panel. Ensured data integrity and request validation using DTOs and NestJS Pipes.",
+    techs: [
+      { name: "NestJS" },
+      { name: "TypeScript" },
+      { name: "MongoDB" },
+      { name: "Mongoose" },
+      { name: "JWT" },
+    ],
+    image: "/assets/work/react-gadgethub.png",
+    live: "#",
+    github: "https://github.com/MahdiPourkeshavarz/nestjs-ecommerce",
+  },
+  {
+    num: "05",
     category: "front-end",
     title: "Test Quiz",
     description:
-      "This project is a React/TypeScript application consisting of two parts: a quiz application for users to take tests and view their results in their profiles",
+      "A React/TypeScript application for users to take tests and view their results in their profiles, featuring a clean user interface built with Material-UI and efficient state management for handling quiz logic and scoring.",
     techs: [
       { name: "React" },
-      { name: "Tanstack/react-query" },
-      { name: "Tailwindcss" },
+      { name: "Tanstack Query" },
+      { name: "Tailwind CSS" },
       { name: "Mui" },
     ],
     image: "/assets/work/react-quiz.png",
@@ -27,32 +96,15 @@ const projects = [
     github: "https://github.com/MahdiPourkeshavarz/interview-test-react",
   },
   {
-    num: "02",
+    num: "06",
     category: "front-end",
-    title: "GadgetHub",
+    title: "GeoJSON Map Tool",
     description:
-      "This project is a shopping website with Admin panel which users can browse through products and order whatever they wish.",
-    techs: [
-      { name: "React" },
-      { name: "react-router-dom" },
-      { name: "Tanstack/react-query" },
-      { name: "Tailwindcss" },
-      { name: "Mui" },
-    ],
-    image: "/assets/work/react-gadgethub.png",
-    live: "#",
-    github: "https://github.com/MahdiPourkeshavarz/react-ts-final-project",
-  },
-  {
-    num: "03",
-    category: "front-end",
-    title: "geojson.io",
-    description:
-      "This project is about creating and working with goejson and shapes on leaflet with help of lealfet-geoman package for react",
+      "A client-side mapping application built with React and Leaflet that allows users to draw, edit, and manage geographic shapes. Integrated the `leaflet-geoman` library to provide a full suite of tools for creating and manipulating GeoJSON data directly on an interactive map.",
     techs: [
       { name: "React" },
       { name: "Leaflet" },
-      { name: "css" },
+      { name: "CSS" },
       { name: "leaflet-geoman" },
     ],
     image: "/assets/work/react-geomahdi.png",
