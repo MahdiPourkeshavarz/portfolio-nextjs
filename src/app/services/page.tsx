@@ -21,7 +21,7 @@ const services = [
   },
   {
     num: "03",
-    title: "Software Tester",
+    title: "Software Testing",
     description:
       "Spearheaded the establishment of the company's first formal QA team, also developed and implemented comprehensive testing methodologies and created all necessary project documentation.",
     href: "",
