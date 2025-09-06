@@ -70,13 +70,32 @@ cd portfolio-nextjs
 npm install
 ```
 
+4. **setup for Emailjs**
+
+User Feedback: Displays clear success or error messages directly in the UI after a form submission attempt, enhancing the user experience.
+
+Configuration
+To enable the contact form, you must create an EmailJS account and configure your environment variables.
+
+Create a .env.local file in the root of the project.
+
+Add the following variables to the file, replacing the placeholder values with your actual credentials from your EmailJS dashboard.
+
+# .env.local - EmailJS Credentials
+
+NEXT_PUBLIC_EMAILJS_SERVICE_ID="YOUR_SERVICE_ID_HERE"
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID="YOUR_TEMPLATE_ID_HERE"
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY="YOUR_PUBLIC_KEY_HERE"
+
+Important: After creating or modifying the .env.local file, you must restart the development server for the changes to be applied.
+
 ## Running the Project
 
-1. run on the development server
+51. run on the development server
 
 ```bash
 npm run dev
 ```
 
-2. open the website on the browser
+6. open the website on the browser
    Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
